@@ -1,6 +1,7 @@
 import time
 
 import RPi.GPIO as GPIO
+from weather_database import WeatherDatabase
 
 
 def setup_anemometer(pin):
@@ -53,5 +54,9 @@ def measure_wind_speed(pin, diameter_mm=106, inefficiency_factor=2.5, duration=1
     # Calculate wind speed
     rots_per_second = rotations / duration
     windspeed_mps = rots_per_second * vane_circ * inefficiency_factor
+
+    # Zapisz odczytaną prędkość wiatru do bazy danych
+    weather_db = WeatherDatabase()
+    weather_db.insert_data(None, None, None, windspeed_mps, None, None)
 
     return windspeed_mps

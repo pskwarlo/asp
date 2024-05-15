@@ -1,6 +1,5 @@
-import time
-
 import RPi.GPIO as GPIO
+from weather_database import WeatherDatabase
 
 
 def setup_yl83(pin):
@@ -24,7 +23,10 @@ def read_yl83(pin):
     Returns:
     - is_raining: True if rain is detected, False otherwise.
     """
-    if GPIO.input(pin) == GPIO.HIGH:
-        return True
-    else:
-        return False
+    is_raining = GPIO.input(pin) == GPIO.HIGH
+
+    # Zapisz status opadów do bazy danych
+    weather_db = WeatherDatabase()
+    weather_db.insert_data(None, None, None, None, None, int(is_raining))
+
+    return is_raining

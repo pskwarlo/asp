@@ -1,6 +1,8 @@
 import math
 import time
 
+from weather_database import WeatherDatabase
+
 
 def write_byte(bus, address, adr, value):
     """
@@ -82,4 +84,9 @@ def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
         readings.append(get_heading(read_word_2c, x_offset, y_offset, scale))
         time.sleep(0.01)
     direction = median(readings)
+
+    # Zapisz odczytaną kierunek wiatru do bazy danych
+    weather_db = WeatherDatabase()
+    weather_db.insert_data(None, None, None, None, direction, None)
+
     return direction

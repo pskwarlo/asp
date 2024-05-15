@@ -1,6 +1,8 @@
 import glob
 import os
 
+from weather_database import WeatherDatabase
+
 
 def read_ds18b20():
     """
@@ -24,6 +26,13 @@ def read_ds18b20():
                 # Wyciągnięcie temperatury z danych
                 temperature_raw = lines[1].split("=")[-1]
                 temperature_celsius = float(temperature_raw) / 1000.0
+
+                # Zapisz odczytaną temperaturę do bazy danych
+                weather_db = WeatherDatabase()
+                weather_db.insert_data(
+                    temperature_celsius, None, None, None, None, None
+                )
+
                 return temperature_celsius
             else:
                 return None

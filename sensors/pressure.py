@@ -1,4 +1,5 @@
 import Adafruit_DHT
+from weather_database import WeatherDatabase
 
 
 def read_dht(sensor, pin):
@@ -14,7 +15,10 @@ def read_dht(sensor, pin):
     - humidity: Humidity value in percentage.
     """
     humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+
+    # Zapisz odczytane dane do bazy danych
     if humidity is not None and temperature is not None:
-        return temperature, humidity
-    else:
-        return None, None
+        weather_db = WeatherDatabase()
+        weather_db.insert_data(temperature, humidity, None, None, None, None)
+
+    return temperature, humidity
