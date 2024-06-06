@@ -6,26 +6,26 @@ from weather_database import WeatherDatabase
 
 def write_byte(bus, address, adr, value):
     """
-    Procedure to write data to a specific address on the I2C bus.
+    Procedura zapisu danych do określonego adresu na magistrali I2C.
 
     Args:
-    - bus: I2C bus object.
-    - address: Address of the device on the I2C bus.
-    - adr: Register address to write data to.
-    - value: Data to write to the register.
+    - bus: Obiekt magistrali I2C.
+    - address: Adres urządzenia na magistrali I2C.
+    - adr: Adres rejestru, do którego mają być zapisane dane.
+    - value: Dane do zapisania w rejestrze.
     """
     bus.write_byte_data(address, adr, value)
 
 
 def median(lst):
     """
-    Calculate median of a list of readings.
+    Oblicza medianę z listy odczytów.
 
     Args:
-    - lst: List of readings.
+    - lst: Lista odczytów.
 
     Returns:
-    - Median value of the list.
+    - Mediana z listy.
     """
     sorted_lst = sorted(lst)
     length = len(lst)
@@ -39,16 +39,16 @@ def median(lst):
 
 def get_heading(read_word_2c, x_offset, y_offset, scale):
     """
-    Calculate heading of the vane in degrees.
+    Oblicza kierunek wiatru w stopniach.
 
     Args:
-    - read_word_2c: Function to read word from a specific address of the I2C device.
-    - x_offset: Offset value for x-axis.
-    - y_offset: Offset value for y-axis.
-    - scale: Scaling factor.
+    - read_word_2c: Funkcja do odczytu słowa z określonego adresu urządzenia I2C.
+    - x_offset: Wartość offsetu dla osi x.
+    - y_offset: Wartość offsetu dla osi y.
+    - scale: Współczynnik skalowania.
 
     Returns:
-    - Heading of the vane in degrees from 0 to 359.
+    - Kierunek wiatru w stopniach od 0 do 359.
     """
     x_out = (read_word_2c(0x1E, 3) - x_offset) * scale
     y_out = (read_word_2c(0x1E, 7) - y_offset) * scale
@@ -67,17 +67,17 @@ def get_heading(read_word_2c, x_offset, y_offset, scale):
 
 def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
     """
-    Read wind direction and smooth the readings.
+    Odczytuje kierunek wiatru i wygładza odczyty.
 
     Args:
-    - bus: I2C bus object.
-    - read_word_2c: Function to read word from a specific address of the I2C device.
-    - x_offset: Offset value for x-axis.
-    - y_offset: Offset value for y-axis.
-    - scale: Scaling factor.
+    - bus: Obiekt magistrali I2C.
+    - read_word_2c: Funkcja do odczytu słowa z określonego adresu urządzenia I2C.
+    - x_offset: Wartość offsetu dla osi x.
+    - y_offset: Wartość offsetu dla osi y.
+    - scale: Współczynnik skalowania.
 
     Returns:
-    - Smoothed wind direction in degrees.
+    - Wygładzony kierunek wiatru w stopniach.
     """
     readings = []
     for _ in range(500):
@@ -85,7 +85,7 @@ def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
         time.sleep(0.01)
     direction = median(readings)
 
-    # Zapisz odczytaną kierunek wiatru do bazy danych
+    # Zapisz odczytany kierunek wiatru do bazy danych
     weather_db = WeatherDatabase()
     weather_db.insert_data(None, None, None, None, direction, None)
 

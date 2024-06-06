@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- @brief Kontener aplikacji -->
+    <div class="container">
+        <!-- @brief Nagłówek strony -->
+        <h1>Dane pogodowe</h1>
+        <!-- @brief Sekcja wyświetlania danych pogodowych -->
+        <div class="weather-data">
+            <p><strong>Temperatura:</strong> <span id="temperature">Ładowanie...</span></p>
+            <p><strong>Wilgotność:</strong> <span id="humidity">Ładowanie...</span></p>
+            <p><strong>Ciśnienie:</strong> <span id="pressure">Ładowanie...</span></p>
+            <p><strong>Prędkość wiatru:</strong> <span id="wind_speed">Ładowanie...</span></p>
+            <p><strong>Kierunek wiatru:</strong> <span id="wind_direction">Ładowanie...</span></p>
+            <p><strong>Opady deszczu:</strong> <span id="rainfall">Ładowanie...</span></p>
+        </div>
+    </div>
+    <script>
+        /**
+         * @brief Funkcja do pobierania danych pogodowych z API i aktualizacji elementów HTML.
+         */
+        async function fetchWeatherData() {
+            try {
+                const response = await fetch('/weather');
+                const data = await response.json();
+                document.getElementById('temperature').textContent = data.temperature + ' °C';
+                document.getElementById('humidity').textContent = data.humidity + ' %';
+                document.getElementById('pressure').textContent = data.pressure + ' hPa';
+                document.getElementById('wind_speed').textContent = data.wind_speed + ' m/s';
+                document.getElementById('wind_direction').textContent = data.wind_direction + ' °';
+                document.getElementById('rainfall').textContent = data.rainfall ? 'Tak' : 'Nie';
+            } catch (error) {
+                console.error('Błąd podczas pobierania danych pogodowych:', error);
+            }
+        }
+
+        // @brief Pobieranie danych pogodowych po załadowaniu strony
+        window.onload = fetchWeatherData;
+    </script>
+</body>
+
+</html>

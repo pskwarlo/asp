@@ -1,0 +1,35 @@
+/**
+ * @brief Kontener aplikacji
+ */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/**
+ * @brief Nagłówek strony
+ */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/**
+ * @brief Sekcja wyświetlania danych pogodowych
+ */
+.weather-data {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/**
+ * @brief Pojedynczy element danych pogodowych
+ */
+.weather-data p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}

@@ -6,10 +6,10 @@ from weather_database import WeatherDatabase
 
 def setup_anemometer(pin):
     """
-    Setup anemometer sensor.
+    Konfiguruje czujnik anemometru.
 
     Args:
-    - pin: GPIO pin connected to the anemometer sensor.
+    - pin: Pin GPIO podłączony do czujnika anemometru.
     """
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin, GPIO.IN)
@@ -17,21 +17,21 @@ def setup_anemometer(pin):
 
 def measure_wind_speed(pin, diameter_mm=106, inefficiency_factor=2.5, duration=10):
     """
-    Measure wind speed using anemometer sensor.
+    Mierzy prędkość wiatru za pomocą czujnika anemometru.
 
     Args:
-    - pin: GPIO pin connected to the anemometer sensor.
-    - diameter_mm: Diameter of the anemometer vane in millimeters.
-    - inefficiency_factor: Anemometer factor to account for inefficiency.
-    - duration: Duration of measurement in seconds.
+    - pin: Pin GPIO podłączony do czujnika anemometru.
+    - diameter_mm: Średnica łopatek anemometru w milimetrach. Domyślnie 106 mm.
+    - inefficiency_factor: Współczynnik anemometru uwzględniający nieefektywność. Domyślnie 2.5.
+    - duration: Czas trwania pomiaru w sekundach. Domyślnie 10 sekund.
 
     Returns:
-    - windspeed_mps: Wind speed in meters per second.
+    - windspeed_mps: Prędkość wiatru w metrach na sekundę.
     """
-    # Calculate vane circumference in meters
+    # Oblicz obwód łopatki anemometru w metrach
     vane_circ = diameter_mm / 1000 * 3.1415
 
-    # Start measuring wind speed
+    # Rozpocznij pomiar prędkości wiatru
     print("Measuring wind speed...")
 
     rotations = 0
@@ -47,11 +47,11 @@ def measure_wind_speed(pin, diameter_mm=106, inefficiency_factor=2.5, duration=1
             trigger = 0
         time.sleep(0.001)
 
-    # Adjust rotations value if needed
+    # Dostosuj wartość obrotów, jeśli to konieczne
     if rotations == 1 and sensorstart == 1:
         rotations = 0
 
-    # Calculate wind speed
+    # Oblicz prędkość wiatru
     rots_per_second = rotations / duration
     windspeed_mps = rots_per_second * vane_circ * inefficiency_factor
 

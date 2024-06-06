@@ -4,10 +4,10 @@ from weather_database import WeatherDatabase
 
 def setup_yl83(pin):
     """
-    Setup YL-83 rain sensor.
+    Konfiguruje czujnik deszczu YL-83.
 
     Args:
-    - pin: GPIO pin connected to the YL-83 sensor.
+    - pin: Pin GPIO podłączony do czujnika YL-83.
     """
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN)
@@ -15,13 +15,13 @@ def setup_yl83(pin):
 
 def read_yl83(pin):
     """
-    Read status of YL-83 rain sensor.
+    Odczytuje status czujnika deszczu YL-83.
 
     Args:
-    - pin: GPIO pin connected to the YL-83 sensor.
+    - pin: Pin GPIO podłączony do czujnika YL-83.
 
     Returns:
-    - is_raining: True if rain is detected, False otherwise.
+    - is_raining: True jeśli wykryto deszcz, False w przeciwnym razie.
     """
     is_raining = GPIO.input(pin) == GPIO.HIGH
 
