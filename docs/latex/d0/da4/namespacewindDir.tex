@@ -1,0 +1,80 @@
+\hypertarget{namespacewindDir}{}\doxysection{wind\+Dir Namespace Reference}
+\label{namespacewindDir}\index{windDir@{windDir}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacewindDir_a24fdeb16d08e1d461293d8dc839ed401}{write\+\_\+byte}} (bus, address, adr, value)
+\item 
+def \mbox{\hyperlink{namespacewindDir_aeb52d37bac3ea185ebcfe8a266ce59b5}{median}} (lst)
+\item 
+def \mbox{\hyperlink{namespacewindDir_ad6609aa3801c21f25797dc4806e3bda7}{get\+\_\+heading}} (read\+\_\+word\+\_\+2c, x\+\_\+offset, y\+\_\+offset, scale)
+\item 
+def \mbox{\hyperlink{namespacewindDir_abd29f97c8966b84ca8714121522b57b1}{read\+\_\+and\+\_\+smooth\+\_\+direction}} (bus, read\+\_\+word\+\_\+2c, x\+\_\+offset, y\+\_\+offset, scale)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacewindDir_ad6609aa3801c21f25797dc4806e3bda7}\label{namespacewindDir_ad6609aa3801c21f25797dc4806e3bda7}} 
+\index{windDir@{windDir}!get\_heading@{get\_heading}}
+\index{get\_heading@{get\_heading}!windDir@{windDir}}
+\doxysubsubsection{\texorpdfstring{get\_heading()}{get\_heading()}}
+{\footnotesize\ttfamily def wind\+Dir.\+get\+\_\+heading (\begin{DoxyParamCaption}\item[{}]{read\+\_\+word\+\_\+2c,  }\item[{}]{x\+\_\+offset,  }\item[{}]{y\+\_\+offset,  }\item[{}]{scale }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Oblicza kierunek wiatru w stopniach.
+
+Args:
+- read_word_2c: Funkcja do odczytu słowa z określonego adresu urządzenia I2C.
+- x_offset: Wartość offsetu dla osi x.
+- y_offset: Wartość offsetu dla osi y.
+- scale: Współczynnik skalowania.
+
+Returns:
+- Kierunek wiatru w stopniach od 0 do 359.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewindDir_aeb52d37bac3ea185ebcfe8a266ce59b5}\label{namespacewindDir_aeb52d37bac3ea185ebcfe8a266ce59b5}} 
+\index{windDir@{windDir}!median@{median}}
+\index{median@{median}!windDir@{windDir}}
+\doxysubsubsection{\texorpdfstring{median()}{median()}}
+{\footnotesize\ttfamily def wind\+Dir.\+median (\begin{DoxyParamCaption}\item[{}]{lst }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Oblicza medianę z listy odczytów.
+
+Args:
+- lst: Lista odczytów.
+
+Returns:
+- Mediana z listy.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewindDir_abd29f97c8966b84ca8714121522b57b1}\label{namespacewindDir_abd29f97c8966b84ca8714121522b57b1}} 
+\index{windDir@{windDir}!read\_and\_smooth\_direction@{read\_and\_smooth\_direction}}
+\index{read\_and\_smooth\_direction@{read\_and\_smooth\_direction}!windDir@{windDir}}
+\doxysubsubsection{\texorpdfstring{read\_and\_smooth\_direction()}{read\_and\_smooth\_direction()}}
+{\footnotesize\ttfamily def wind\+Dir.\+read\+\_\+and\+\_\+smooth\+\_\+direction (\begin{DoxyParamCaption}\item[{}]{bus,  }\item[{}]{read\+\_\+word\+\_\+2c,  }\item[{}]{x\+\_\+offset,  }\item[{}]{y\+\_\+offset,  }\item[{}]{scale }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Odczytuje kierunek wiatru.
+
+Args:
+- bus: Obiekt magistrali I2C.
+- read_word_2c: Funkcja do odczytu słowa z określonego adresu urządzenia I2C.
+- x_offset: Wartość offsetu dla osi x.
+- y_offset: Wartość offsetu dla osi y.
+- scale: Współczynnik skalowania.
+
+Returns:
+- Wygładzony kierunek wiatru w stopniach.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewindDir_a24fdeb16d08e1d461293d8dc839ed401}\label{namespacewindDir_a24fdeb16d08e1d461293d8dc839ed401}} 
+\index{windDir@{windDir}!write\_byte@{write\_byte}}
+\index{write\_byte@{write\_byte}!windDir@{windDir}}
+\doxysubsubsection{\texorpdfstring{write\_byte()}{write\_byte()}}
+{\footnotesize\ttfamily def wind\+Dir.\+write\+\_\+byte (\begin{DoxyParamCaption}\item[{}]{bus,  }\item[{}]{address,  }\item[{}]{adr,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Procedura zapisu danych do określonego adresu na magistrali I2C.
+
+Args:
+- bus: Obiekt magistrali I2C.
+- address: Adres urządzenia na magistrali I2C.
+- adr: Adres rejestru, do którego mają być zapisane dane.
+- value: Dane do zapisania w rejestrze.
+\end{DoxyVerb}
+ 

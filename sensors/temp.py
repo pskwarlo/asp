@@ -6,7 +6,7 @@ from weather_database import WeatherDatabase
 
 def read_ds18b20():
     """
-    Odczytuje temperaturę z czujnika DS18B20.
+    Odczytuje temperaturę z DS18B20.
 
     Funkcja ta lokalizuje plik danych czujnika DS18B20 w systemie plików,
     odczytuje temperaturę, a następnie zapisuje odczytane dane do bazy danych.

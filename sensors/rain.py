@@ -23,6 +23,7 @@ def read_yl83(pin):
     Returns:
     - is_raining: True jeśli wykryto deszcz, False w przeciwnym razie.
     """
+
     is_raining = GPIO.input(pin) == GPIO.HIGH
 
     # Zapisz status opadów do bazy danych

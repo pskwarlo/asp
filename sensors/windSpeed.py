@@ -20,7 +20,7 @@ def measure_wind_speed(pin, diameter_mm=106, inefficiency_factor=2.5, duration=1
     Mierzy prędkość wiatru za pomocą czujnika anemometru.
 
     Args:
-    - pin: Pin GPIO podłączony do czujnika anemometru.
+    - pin: Pin GPIO podłączony do czujnika.
     - diameter_mm: Średnica łopatek anemometru w milimetrach. Domyślnie 106 mm.
     - inefficiency_factor: Współczynnik anemometru uwzględniający nieefektywność. Domyślnie 2.5.
     - duration: Czas trwania pomiaru w sekundach. Domyślnie 10 sekund.

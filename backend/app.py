@@ -37,7 +37,7 @@ class WeatherData(BaseModel):
 @app.get("/weather")
 def get_weather_data():
     """
-    Endpoint do pobierania danych pogodowych.
+    Punkt końcowy do pobierania danych pogodowych.
 
     Funkcja ta odczytuje dane z różnych czujników pogodowych i zwraca je
     w formacie JSON jako instancję klasy WeatherData.

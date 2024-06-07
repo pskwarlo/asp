@@ -40,7 +40,7 @@ class WeatherDatabase:
         self, temperature, humidity, pressure, wind_speed, wind_direction, rainfall
     ):
         """
-        Wstawia dane pogodowe do tabeli weather_data.
+        Dodaj dane pogodowe do tabeli weather_data.
 
         Args:
             temperature (float): Temperatura w stopniach Celsjusza.

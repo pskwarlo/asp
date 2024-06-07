@@ -67,7 +67,7 @@ def get_heading(read_word_2c, x_offset, y_offset, scale):
 
 def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
     """
-    Odczytuje kierunek wiatru i wygładza odczyty.
+    Odczytuje kierunek wiatru.
 
     Args:
     - bus: Obiekt magistrali I2C.
