@@ -1,0 +1,29 @@
+\hypertarget{namespacepressure}{}\doxysection{pressure Namespace Reference}
+\label{namespacepressure}\index{pressure@{pressure}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepressure_ac481ba41b68765e42c7c2f4ae8197ba6}{read\+\_\+dht}} (sensor, pin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepressure_ac481ba41b68765e42c7c2f4ae8197ba6}\label{namespacepressure_ac481ba41b68765e42c7c2f4ae8197ba6}} 
+\index{pressure@{pressure}!read\_dht@{read\_dht}}
+\index{read\_dht@{read\_dht}!pressure@{pressure}}
+\doxysubsubsection{\texorpdfstring{read\_dht()}{read\_dht()}}
+{\footnotesize\ttfamily def pressure.\+read\+\_\+dht (\begin{DoxyParamCaption}\item[{}]{sensor,  }\item[{}]{pin }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Odczytuje temperaturę i wilgotność z czujnika DHT.
+
+Funkcja ta odczytuje dane z czujnika DHT, zapisuje je do bazy danych,
+a następnie zwraca odczytane wartości temperatury i wilgotności.
+
+@param sensor Typ czujnika, może być Adafruit_DHT.DHT11 lub Adafruit_DHT.DHT22.
+@param pin Pin GPIO podłączony do czujnika.
+
+@returns
+@retval temperature Wartość temperatury w stopniach Celsjusza.
+@retval humidity Wartość wilgotności w procentach.
+\end{DoxyVerb}
+ 

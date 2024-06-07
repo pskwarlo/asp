@@ -1,0 +1,82 @@
+\hypertarget{classdatabase_1_1WeatherDatabase}{}\doxysection{database.\+Weather\+Database Class Reference}
+\label{classdatabase_1_1WeatherDatabase}\index{database.WeatherDatabase@{database.WeatherDatabase}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classdatabase_1_1WeatherDatabase_a915adbbb53a9d1e1b30e300d0f928b08}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classdatabase_1_1WeatherDatabase_ab07a6d36741986b92d3281cdbd23f107}{db\+\_\+file}}=\char`\"{}weather\+\_\+data.\+db\char`\"{})
+\item 
+def \mbox{\hyperlink{classdatabase_1_1WeatherDatabase_a84bd5e6faa5e5bc51bc873bdb01302c1}{create\+\_\+table}} (self)
+\item 
+def \mbox{\hyperlink{classdatabase_1_1WeatherDatabase_ad58dbeef940f6663291ff96f1e5b8279}{insert\+\_\+data}} (self, temperature, humidity, pressure, wind\+\_\+speed, wind\+\_\+direction, rainfall)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdatabase_1_1WeatherDatabase_ab07a6d36741986b92d3281cdbd23f107}{db\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Klasa do obsługi przechowywania danych pogodowych w bazie danych SQLite.
+
+Ta klasa udostępnia metody do tworzenia tabeli danych pogodowych oraz
+wstawiania danych pogodowych do bazy danych SQLite.
+
+Atrybuty:
+    db_file (str): Nazwa pliku bazy danych SQLite.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdatabase_1_1WeatherDatabase_a915adbbb53a9d1e1b30e300d0f928b08}\label{classdatabase_1_1WeatherDatabase_a915adbbb53a9d1e1b30e300d0f928b08}} 
+\index{database.WeatherDatabase@{database.WeatherDatabase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!database.WeatherDatabase@{database.WeatherDatabase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def database.\+Weather\+Database.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{db\+\_\+file = {\ttfamily \char`\"{}weather\+\_\+data.db\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Inicjalizuje klasę WeatherDatabase z podanym plikiem bazy danych.
+
+Args:
+    db_file (str): Nazwa pliku bazy danych SQLite. Domyślnie "weather_data.db".
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1WeatherDatabase_a84bd5e6faa5e5bc51bc873bdb01302c1}\label{classdatabase_1_1WeatherDatabase_a84bd5e6faa5e5bc51bc873bdb01302c1}} 
+\index{database.WeatherDatabase@{database.WeatherDatabase}!create\_table@{create\_table}}
+\index{create\_table@{create\_table}!database.WeatherDatabase@{database.WeatherDatabase}}
+\doxysubsubsection{\texorpdfstring{create\_table()}{create\_table()}}
+{\footnotesize\ttfamily def database.\+Weather\+Database.\+create\+\_\+table (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Tworzy tabelę do przechowywania danych pogodowych, jeśli jeszcze nie istnieje.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classdatabase_1_1WeatherDatabase_ad58dbeef940f6663291ff96f1e5b8279}\label{classdatabase_1_1WeatherDatabase_ad58dbeef940f6663291ff96f1e5b8279}} 
+\index{database.WeatherDatabase@{database.WeatherDatabase}!insert\_data@{insert\_data}}
+\index{insert\_data@{insert\_data}!database.WeatherDatabase@{database.WeatherDatabase}}
+\doxysubsubsection{\texorpdfstring{insert\_data()}{insert\_data()}}
+{\footnotesize\ttfamily def database.\+Weather\+Database.\+insert\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{temperature,  }\item[{}]{humidity,  }\item[{}]{pressure,  }\item[{}]{wind\+\_\+speed,  }\item[{}]{wind\+\_\+direction,  }\item[{}]{rainfall }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dodaj dane pogodowe do tabeli weather_data.
+
+Args:
+    temperature (float): Temperatura w stopniach Celsjusza.
+    humidity (float): Wilgotność w procentach.
+    pressure (float): Ciśnienie w hPa.
+    wind_speed (float): Prędkość wiatru w m/s.
+    wind_direction (float): Kierunek wiatru w stopniach.
+    rainfall (int): Opady deszczu w mm.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdatabase_1_1WeatherDatabase_ab07a6d36741986b92d3281cdbd23f107}\label{classdatabase_1_1WeatherDatabase_ab07a6d36741986b92d3281cdbd23f107}} 
+\index{database.WeatherDatabase@{database.WeatherDatabase}!db\_file@{db\_file}}
+\index{db\_file@{db\_file}!database.WeatherDatabase@{database.WeatherDatabase}}
+\doxysubsubsection{\texorpdfstring{db\_file}{db\_file}}
+{\footnotesize\ttfamily database.\+Weather\+Database.\+db\+\_\+file}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sensors/\mbox{\hyperlink{database_8py}{database.\+py}}\end{DoxyCompactItemize}

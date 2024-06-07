@@ -18,7 +18,7 @@ h1 {
 }
 
 /**
- * @brief Sekcja wyświetlania danych pogodowych
+ * @brief Sekcja wyświetlania danych 
  */
 .weather-data {
     background-color: #f0f0f0;
@@ -27,7 +27,7 @@ h1 {
 }
 
 /**
- * @brief Pojedynczy element danych pogodowych
+ * @brief Pojedynczy element danych 
  */
 .weather-data p {
     font-size: 1.2em;

@@ -1,0 +1,41 @@
+\hypertarget{namespacewindSpeed}{}\doxysection{wind\+Speed Namespace Reference}
+\label{namespacewindSpeed}\index{windSpeed@{windSpeed}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacewindSpeed_a040ee1c7f5494b9e05424041b591adac}{setup\+\_\+anemometer}} (pin)
+\item 
+def \mbox{\hyperlink{namespacewindSpeed_a518b3b04fd7a22521e51ee82b7fbd05a}{measure\+\_\+wind\+\_\+speed}} (pin, diameter\+\_\+mm=106, inefficiency\+\_\+factor=2.\+5, duration=10)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacewindSpeed_a518b3b04fd7a22521e51ee82b7fbd05a}\label{namespacewindSpeed_a518b3b04fd7a22521e51ee82b7fbd05a}} 
+\index{windSpeed@{windSpeed}!measure\_wind\_speed@{measure\_wind\_speed}}
+\index{measure\_wind\_speed@{measure\_wind\_speed}!windSpeed@{windSpeed}}
+\doxysubsubsection{\texorpdfstring{measure\_wind\_speed()}{measure\_wind\_speed()}}
+{\footnotesize\ttfamily def wind\+Speed.\+measure\+\_\+wind\+\_\+speed (\begin{DoxyParamCaption}\item[{}]{pin,  }\item[{}]{diameter\+\_\+mm = {\ttfamily 106},  }\item[{}]{inefficiency\+\_\+factor = {\ttfamily 2.5},  }\item[{}]{duration = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Mierzy prędkość wiatru za pomocą czujnika anemometru.
+
+Args:
+- pin: Pin GPIO podłączony do czujnika.
+- diameter_mm: Średnica łopatek anemometru w milimetrach. Domyślnie 106 mm.
+- inefficiency_factor: Współczynnik anemometru uwzględniający nieefektywność. Domyślnie 2.5.
+- duration: Czas trwania pomiaru w sekundach. Domyślnie 10 sekund.
+
+Returns:
+- windspeed_mps: Prędkość wiatru w metrach na sekundę.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacewindSpeed_a040ee1c7f5494b9e05424041b591adac}\label{namespacewindSpeed_a040ee1c7f5494b9e05424041b591adac}} 
+\index{windSpeed@{windSpeed}!setup\_anemometer@{setup\_anemometer}}
+\index{setup\_anemometer@{setup\_anemometer}!windSpeed@{windSpeed}}
+\doxysubsubsection{\texorpdfstring{setup\_anemometer()}{setup\_anemometer()}}
+{\footnotesize\ttfamily def wind\+Speed.\+setup\+\_\+anemometer (\begin{DoxyParamCaption}\item[{}]{pin }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Konfiguruje czujnik anemometru.
+
+Args:
+- pin: Pin GPIO podłączony do czujnika anemometru.
+\end{DoxyVerb}
+ 
