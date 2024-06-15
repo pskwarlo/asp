@@ -1,20 +1,8 @@
-import math
+import glob
+import os
 import time
-
+import math
 from weather_database import WeatherDatabase
-
-
-def write_byte(bus, address, adr, value):
-    """
-    Procedura zapisu danych do określonego adresu na magistrali I2C.
-
-    Args:
-    - bus: Obiekt magistrali I2C.
-    - address: Adres urządzenia na magistrali I2C.
-    - adr: Adres rejestru, do którego mają być zapisane dane.
-    - value: Dane do zapisania w rejestrze.
-    """
-    bus.write_byte_data(address, adr, value)
 
 
 def median(lst):
@@ -35,7 +23,6 @@ def median(lst):
         return sorted_lst[length // 2]
     else:
         return (sorted_lst[length // 2 - 1] + sorted_lst[length // 2]) / 2.0
-
 
 def get_heading(read_word_2c, x_offset, y_offset, scale):
     """
@@ -64,7 +51,6 @@ def get_heading(read_word_2c, x_offset, y_offset, scale):
         heading = math.degrees(bearing) - 270
     return heading
 
-
 def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
     """
     Odczytuje kierunek wiatru.
@@ -90,3 +76,4 @@ def read_and_smooth_direction(bus, read_word_2c, x_offset, y_offset, scale):
     weather_db.insert_data(None, None, None, None, direction, None)
 
     return direction
+
